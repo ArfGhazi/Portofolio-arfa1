@@ -54,14 +54,12 @@
             </ul>
 
             <button id="themeToggle" class="p-2 rounded-full bg-base-200 hover:bg-base-300 transition">
-                <!-- Sun -->
                 <svg id="sunIcon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none"
                     viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M12 3v2m0 14v2m9-9h-2M5 12H3m15.364 6.364l-1.414-1.414M7.05 7.05L5.636 5.636m12.728 0l-1.414 1.414M7.05 16.95l-1.414 1.414M12 8a4 4 0 110 8 4 4 0 010-8z" />
                 </svg>
 
-                <!-- Moon -->
                 <svg id="moonIcon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none"
                     viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -69,13 +67,12 @@
                 </svg>
             </button>
 
-
         </div>
     </div>
-    </div>
+
     <div id="home" class="hero bg-base-200 py-20">
         <div class="hero-content flex-col lg:flex-row-reverse gap-16 max-w-6xl mx-auto">
-            <img src="Asset/Image/Untitled design (1).png" class="max-w-sm rounded-lg shadow-2xl w-90px h-90px" />
+            <img src="Untitled design (1).png" class="max-w-sm rounded-lg shadow-2xl" />
             <div>
                 <h1 class="text-2xl">Hello, I'm</h1>
                 <h1 class="text-4xl font-bold">Arfa Ghazi Amr Arumi,</h1>
@@ -92,6 +89,7 @@
             </div>
         </div>
     </div>
+
     <div id="skill" class="py-24 bg-base-100">
         <div class="max-w-6xl mx-auto px-6">
 
@@ -141,6 +139,7 @@
 
         </div>
     </div>
+
     <section id="project" class="py-24 bg-base-100">
         <div class="max-w-6xl mx-auto px-6">
 
@@ -152,32 +151,28 @@
 
                 <div class="bg-base-200 p-5 rounded-xl shadow-md hover:scale-[1.03] transition cursor-pointer"
                     data-aos="zoom-in">
-                    <img src="Asset/Image/2.png"
-                        class="rounded-lg mb-4 w-full h-40 object-cover" alt="">
+                    <img src="2.png" class="rounded-lg mb-4 w-full h-40 object-cover" alt="">
                     <h3 class="text-xl font-semibold">All In One Menu</h3>
                     <p class="text-sm opacity-70 mt-2">Simple Arithmetics Menu.</p>
                 </div>
 
                 <div class="bg-base-200 p-5 rounded-xl shadow-md hover:scale-[1.03] transition cursor-pointer"
                     data-aos="zoom-in" data-aos-delay="100">
-                    <img src="Asset/Image/1.png"
-                        class="rounded-lg mb-4 w-full h-40 object-cover" alt="">
+                    <img src="1.png" class="rounded-lg mb-4 w-full h-40 object-cover" alt="">
                     <h3 class="text-xl font-semibold">E-Commerce</h3>
                     <p class="text-sm opacity-70 mt-2">Simple Restaurant Cashier.</p>
                 </div>
 
                 <div class="bg-base-200 p-5 rounded-xl shadow-md hover:scale-[1.03] transition cursor-pointer"
                     data-aos="zoom-in" data-aos-delay="200">
-                    <img src="Asset/Image/3.png"
-                        class="rounded-lg mb-4 w-full h-40 object-cover" alt="">
+                    <img src="3.png" class="rounded-lg mb-4 w-full h-40 object-cover" alt="">
                     <h3 class="text-xl font-semibold">Learning Page</h3>
                     <p class="text-sm opacity-70 mt-2">Learning Chapter Website.</p>
                 </div>
 
                 <div class="bg-base-200 p-5 rounded-xl shadow-md hover:scale-[1.03] transition cursor-pointer"
                     data-aos="zoom-in" data-aos-delay="300">
-                    <img src="Asset/Image/4.png"
-                        class="rounded-lg mb-4 w-full h-40 object-cover" alt="">
+                    <img src="4.png" class="rounded-lg mb-4 w-full h-40 object-cover" alt="">
                     <h3 class="text-xl font-semibold">Simple Menu</h3>
                     <p class="text-sm opacity-70 mt-2">Scholarship Eligibility Checker.</p>
                 </div>
@@ -186,9 +181,9 @@
 
         </div>
     </section>
+
     <section id="contact" class="max-w-3xl mx-auto px-6 py-20">
         <h2 class="text-3xl font-semibold tracking-tight mb-6">Contact</h2>
-
 
         <form class="space-y-6 mb-20">
             <div>
@@ -217,6 +212,7 @@
             </button>
         </form>
     </section>
+
     <footer class="w-full bg-base-300 text-base-content py-12 mt-20 transition">
         <div class="max-w-6xl mx-auto px-6 flex flex-col items-center gap-8">
 
@@ -239,9 +235,9 @@
             </p>
         </div>
     </footer>
+
     <script>
         lucide.createIcons();
-
         AOS.init();
 
         const themeToggle = document.getElementById("themeToggle");
@@ -272,7 +268,6 @@
             applyTheme(newTheme);
         });
 
-
         const sections = document.querySelectorAll("section, .hero");
         const navLinks = document.querySelectorAll("#navbar a");
 
@@ -297,6 +292,7 @@
                 }
             });
         });
+
         const roles = [
             "Web Developer",
             "Frontend Engineer",
@@ -338,8 +334,7 @@
         }
 
         type();
-
     </script>
-</body>
 
+</body>
 </html>

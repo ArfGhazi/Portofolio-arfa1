@@ -6,20 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project</title>
 
-    <!-- Tailwind + DaisyUI -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet">
 
-    <!-- AOS -->
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-    <!-- Lucide -->
     <script src="https://unpkg.com/lucide@0.474.0/dist/umd/lucide.js"></script>
 
     <style>
         h1 {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+        }
+
+        #role::after {
+            content: "|";
+            animation: blink 0.7s infinite;
+            margin-left: 3px;
+        }
+
+        @keyframes blink {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
         }
     </style>
 </head>
@@ -38,7 +53,6 @@
                 <li><a href="#contact">Contact</a></li>
             </ul>
 
-
             <button id="themeToggle" class="p-2 rounded-full bg-base-200 hover:bg-base-300 transition">
                 <!-- Sun -->
                 <svg id="sunIcon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none"
@@ -55,12 +69,13 @@
                 </svg>
             </button>
 
+
         </div>
     </div>
     </div>
     <div id="home" class="hero bg-base-200 py-20">
         <div class="hero-content flex-col lg:flex-row-reverse gap-16 max-w-6xl mx-auto">
-            <img src="Untitled design (1).png" class="max-w-sm rounded-lg shadow-2xl w-90px h-90px" />
+            <img src="Asset/Image/Untitled design (1).png" class="max-w-sm rounded-lg shadow-2xl w-90px h-90px" />
             <div>
                 <h1 class="text-2xl">Hello, I'm</h1>
                 <h1 class="text-4xl font-bold">Arfa Ghazi Amr Arumi,</h1>
@@ -84,45 +99,38 @@
                 Skills
             </h2>
 
-            <!-- GRID SKILL -->
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
 
-                <!-- HTML -->
                 <div class="bg-base-200 p-6 rounded-xl shadow-md flex flex-col items-center hover:scale-105 transition"
                     data-aos="zoom-in">
                     <i data-lucide="code" class="w-10 h-10 mb-3"></i>
                     <p class="text-lg font-medium">HTML</p>
                 </div>
 
-                <!-- CSS -->
                 <div class="bg-base-200 p-6 rounded-xl shadow-md flex flex-col items-center hover:scale-105 transition"
                     data-aos="zoom-in" data-aos-delay="100">
                     <i data-lucide="palette" class="w-10 h-10 mb-3"></i>
                     <p class="text-lg font-medium">CSS</p>
                 </div>
 
-                <!-- JavaScript -->
                 <div class="bg-base-200 p-6 rounded-xl shadow-md flex flex-col items-center hover:scale-105 transition"
                     data-aos="zoom-in" data-aos-delay="200">
                     <i data-lucide="zap" class="w-10 h-10 mb-3"></i>
                     <p class="text-lg font-medium">JavaScript</p>
                 </div>
 
-                <!-- Tailwind -->
                 <div class="bg-base-200 p-6 rounded-xl shadow-md flex flex-col items-center hover:scale-105 transition"
                     data-aos="zoom-in" data-aos-delay="300">
                     <i data-lucide="wind" class="w-10 h-10 mb-3"></i>
                     <p class="text-lg font-medium">Tailwind CSS</p>
                 </div>
 
-                <!-- DaisyUI -->
                 <div class="bg-base-200 p-6 rounded-xl shadow-md flex flex-col items-center hover:scale-105 transition"
                     data-aos="zoom-in" data-aos-delay="400">
                     <i data-lucide="flower" class="w-10 h-10 mb-3"></i>
                     <p class="text-lg font-medium">DaisyUI</p>
                 </div>
 
-                <!-- Python -->
                 <div class="bg-base-200 p-6 rounded-xl shadow-md flex flex-col items-center hover:scale-105 transition"
                     data-aos="zoom-in" data-aos-delay="500">
                     <i data-lucide="cpu" class="w-10 h-10 mb-3"></i>
@@ -142,37 +150,33 @@
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
 
-                <!-- PROJECT 1 -->
                 <div class="bg-base-200 p-5 rounded-xl shadow-md hover:scale-[1.03] transition cursor-pointer"
                     data-aos="zoom-in">
-                    <img src="2.png"
+                    <img src="Asset/Image/2.png"
                         class="rounded-lg mb-4 w-full h-40 object-cover" alt="">
                     <h3 class="text-xl font-semibold">All In One Menu</h3>
                     <p class="text-sm opacity-70 mt-2">Simple Arithmetics Menu.</p>
                 </div>
 
-                <!-- PROJECT 2 -->
                 <div class="bg-base-200 p-5 rounded-xl shadow-md hover:scale-[1.03] transition cursor-pointer"
                     data-aos="zoom-in" data-aos-delay="100">
-                    <img src="1.png"
+                    <img src="Asset/Image/1.png"
                         class="rounded-lg mb-4 w-full h-40 object-cover" alt="">
                     <h3 class="text-xl font-semibold">E-Commerce</h3>
                     <p class="text-sm opacity-70 mt-2">Simple Restaurant Cashier.</p>
                 </div>
 
-                <!-- PROJECT 3 -->
                 <div class="bg-base-200 p-5 rounded-xl shadow-md hover:scale-[1.03] transition cursor-pointer"
                     data-aos="zoom-in" data-aos-delay="200">
-                    <img src="3.png"
+                    <img src="Asset/Image/3.png"
                         class="rounded-lg mb-4 w-full h-40 object-cover" alt="">
                     <h3 class="text-xl font-semibold">Learning Page</h3>
                     <p class="text-sm opacity-70 mt-2">Learning Chapter Website.</p>
                 </div>
 
-                <!-- PROJECT 4 -->
                 <div class="bg-base-200 p-5 rounded-xl shadow-md hover:scale-[1.03] transition cursor-pointer"
                     data-aos="zoom-in" data-aos-delay="300">
-                    <img src="4.png"
+                    <img src="Asset/Image/4.png"
                         class="rounded-lg mb-4 w-full h-40 object-cover" alt="">
                     <h3 class="text-xl font-semibold">Simple Menu</h3>
                     <p class="text-sm opacity-70 mt-2">Scholarship Eligibility Checker.</p>
@@ -235,7 +239,7 @@
             </p>
         </div>
     </footer>
-     <script>
+    <script>
         lucide.createIcons();
 
         AOS.init();

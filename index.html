@@ -39,22 +39,21 @@
             </ul>
 
 
-            <!-- 🌙☀️ Theme Toggle (fixed) -->
-            <label class="swap swap-rotate" aria-label="Toggle theme">
-                <input type="checkbox" id="themeToggle" />
-
-                <!-- moon icon: tampil ketika checked (dark) -->
-                <svg class="swap-on fill-current w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <path
-                        d="M21.64 13a1 1 0 0 0-1.05-.14 7 7 0 0 1-9.19-9.19A1 1 0 0 0 10 2.36 9 9 0 1 0 22 14a1 1 0 0 0-.36-1z" />
+            <button id="themeToggle" class="p-2 rounded-full bg-base-200 hover:bg-base-300 transition">
+                <!-- Sun -->
+                <svg id="sunIcon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none"
+                    viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M12 3v2m0 14v2m9-9h-2M5 12H3m15.364 6.364l-1.414-1.414M7.05 7.05L5.636 5.636m12.728 0l-1.414 1.414M7.05 16.95l-1.414 1.414M12 8a4 4 0 110 8 4 4 0 010-8z" />
                 </svg>
 
-                <!-- sun icon: tampil ketika unchecked (light) -->
-                <svg class="swap-off fill-current w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <path
-                        d="M5.64 17l-.71.71a1 1 0 1 0 1.41 1.41l.71-.71a1 1 0 0 0-1.41-1.41zM1 13h2a1 1 0 0 0 0-2H1a1 1 0 0 0 0 2zm10 9a1 1 0 0 0 1-1v-2a1 1 0 0 0-2 0v2a1 1 0 0 0 1 1zm9-10a1 1 0 0 0 0-2h-2a1 1 0 0 0 0 2zM5.64 7.05a1 1 0 0 0 1.41-1.41l-.71-.71A1 1 0 1 0 4.93 6.34zm12.02 9.95a1 1 0 1 0 1.41-1.41l-.71-.71a1 1 0 1 0-1.41 1.41zM12 7a5 5 0 1 1-5 5 5 5 0 0 1 5-5z" />
+                <!-- Moon -->
+                <svg id="moonIcon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none"
+                    viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79z" />
                 </svg>
-            </label>
+            </button>
 
         </div>
     </div>
@@ -236,31 +235,39 @@
             </p>
         </div>
     </footer>
-    <script>
+     <script>
         lucide.createIcons();
 
         AOS.init();
 
-        const themeToggle = document.getElementById('themeToggle');
-        const html = document.querySelector('html');
+        const themeToggle = document.getElementById("themeToggle");
+        const sunIcon = document.getElementById("sunIcon");
+        const moonIcon = document.getElementById("moonIcon");
 
-        // Load saved theme on refresh
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme) {
-            html.setAttribute('data-theme', savedTheme);
-            // checked = true when theme is 'dark'
-            themeToggle.checked = savedTheme === 'dark';
-        } else {
-            // jika belum ada saved theme, sinkron dengan atribut html (default)
-            const defaultTheme = html.getAttribute('data-theme') || 'light';
-            themeToggle.checked = defaultTheme === 'dark';
+        function applyTheme(theme) {
+            document.documentElement.setAttribute("data-theme", theme);
+
+            if (theme === "dark") {
+                sunIcon.classList.remove("hidden");
+                moonIcon.classList.add("hidden");
+            } else {
+                moonIcon.classList.remove("hidden");
+                sunIcon.classList.add("hidden");
+            }
+
+            localStorage.setItem("theme", theme);
         }
 
-        themeToggle.addEventListener('change', () => {
-            const theme = themeToggle.checked ? 'dark' : 'light';
-            html.setAttribute('data-theme', theme);
-            localStorage.setItem('theme', theme);
+        const savedTheme = localStorage.getItem("theme") || "light";
+        applyTheme(savedTheme);
+
+        themeToggle.addEventListener("click", () => {
+            const newTheme = document.documentElement.getAttribute("data-theme") === "light"
+                ? "dark"
+                : "light";
+            applyTheme(newTheme);
         });
+
 
         const sections = document.querySelectorAll("section, .hero");
         const navLinks = document.querySelectorAll("#navbar a");

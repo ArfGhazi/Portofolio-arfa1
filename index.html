@@ -2,185 +2,326 @@
 <html lang="en" data-theme="light">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project</title>
 
-    <!-- Tailwind + DaisyUI -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet">
 
-    <!-- AOS -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-    <!-- Lucide -->
     <script src="https://unpkg.com/lucide@0.474.0/dist/umd/lucide.js"></script>
 
     <style>
-        #role::after {
-            content: "|";
-            animation: blink 0.7s infinite;
-            margin-left: 3px;
+        h1 {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
         }
 
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
-        }
+        .menu a.active {
+    background-color: black;
+    color: white;
+    border-radius: 0.5rem;
+}
+
     </style>
 </head>
 
 <body class="overflow-x-hidden">
-
-    <!-- NAVBAR -->
-    <div class="navbar bg-base-100 shadow-sm sticky top-0 z-50 backdrop-blur">
+    <div class="navbar bg-base-100 shadow-sm py-2 sticky top-0 z-50 backdrop-blur">
         <div class="flex-1">
-            <a class="btn btn-ghost text-2xl font-semibold">Portfolio</a>
+            <a class="btn btn-ghost text-2xl font-semibold">Portofolio</a>
         </div>
 
         <div class="flex-none flex items-center gap-4">
-            <ul id="navbar" class="menu menu-horizontal px-1 font-medium">
+            <ul id="navbar" class="menu menu-horizontal px-1 text-lg font-medium">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#skill">Skill</a></li>
                 <li><a href="#project">Project</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
 
-            <button id="themeToggle" class="p-2 rounded-full bg-base-200">
-                <svg id="sunIcon" class="w-6 h-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M12 3v2m0 14v2m9-9h-2M5 12H3m15.36 6.36l-1.41-1.41M7.05 7.05L5.64 5.64m12.72 0l-1.41 1.41M7.05 16.95l-1.41 1.41M12 8a4 4 0 110 8 4 4 0 010-8z" />
+
+            <!-- 🌙☀️ Theme Toggle (fixed) -->
+            <label class="swap swap-rotate" aria-label="Toggle theme">
+                <input type="checkbox" id="themeToggle" />
+
+                <!-- moon icon: tampil ketika checked (dark) -->
+                <svg class="swap-on fill-current w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path
+                        d="M21.64 13a1 1 0 0 0-1.05-.14 7 7 0 0 1-9.19-9.19A1 1 0 0 0 10 2.36 9 9 0 1 0 22 14a1 1 0 0 0-.36-1z" />
                 </svg>
-                <svg id="moonIcon" class="w-6 h-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79z" />
+
+                <!-- sun icon: tampil ketika unchecked (light) -->
+                <svg class="swap-off fill-current w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path
+                        d="M5.64 17l-.71.71a1 1 0 1 0 1.41 1.41l.71-.71a1 1 0 0 0-1.41-1.41zM1 13h2a1 1 0 0 0 0-2H1a1 1 0 0 0 0 2zm10 9a1 1 0 0 0 1-1v-2a1 1 0 0 0-2 0v2a1 1 0 0 0 1 1zm9-10a1 1 0 0 0 0-2h-2a1 1 0 0 0 0 2zM5.64 7.05a1 1 0 0 0 1.41-1.41l-.71-.71A1 1 0 1 0 4.93 6.34zm12.02 9.95a1 1 0 1 0 1.41-1.41l-.71-.71a1 1 0 1 0-1.41 1.41zM12 7a5 5 0 1 1-5 5 5 5 0 0 1 5-5z" />
                 </svg>
-            </button>
+            </label>
+
         </div>
     </div>
-
-    <!-- HERO -->
+    </div>
     <section id="home" class="hero bg-base-200 py-20">
-        <div class="hero-content flex-col lg:flex-row-reverse gap-10 max-w-6xl mx-auto px-6">
-
+        <div class="hero-content flex-col lg:flex-row-reverse gap-8 lg:gap-16 max-w-6xl mx-auto">
             <img src="Untitled design (1).png"
-                class="w-full max-w-xs mx-auto rounded-xl shadow-2xl" />
-
-            <div class="text-center lg:text-left">
-                <h1 class="text-xl">Hello, I'm</h1>
-                <h1 class="text-4xl font-bold mt-1">Arfa Ghazi Amr Arumi</h1>
-                <h2 class="text-2xl font-semibold mt-2">
-                    I'm a <span id="role" class="text-primary"></span>
-                </h2>
-
-                <p class="mt-6 max-w-xl leading-relaxed">
-                    I am a student with a keen interest in technology, particularly in web development.
-                    Currently focusing on improving my skills to become a professional web developer.
+                class="w-64 max-w-full h-auto rounded-lg shadow-2xl mx-auto" />
+            <div>
+                <h1 class="text-2xl">Hello, I'm</h1>
+                <h1 class="text-4xl font-bold">Arfa Ghazi Amr Arumi,</h1>
+                <h1 class="text-3xl font-bold">
+                    I'm a <span id="role" class="text-blue-500"></span>
+                </h1>
+                <p class="py-6 text-2x leading-relaxed max-w-xl">
+                    I am a student with a keen interest in technology, particularly in the field of web development.
+                    I am currently enrolled in a vocational school that supports my interest in IT. I am currently
+                    focusing on honing my coding skills so that I can become a web developer.
                 </p>
 
-                <a href="#contact" class="btn btn-primary mt-6">Hire Me</a>
+                <button class="btn btn-neutral" href="contact.html">Hire Me</button>
             </div>
         </div>
     </section>
-
-    <!-- SKILLS -->
     <section id="skill" class="py-24 bg-base-100">
         <div class="max-w-6xl mx-auto px-6">
-            <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">Skills</h2>
 
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
-                <div class="card bg-base-200 p-6 items-center" data-aos="zoom-in">
-                    <i data-lucide="code"></i>
-                    <p>HTML</p>
+            <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">
+                Skills
+            </h2>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+
+                <div class="bg-base-200 p-6 rounded-xl shadow-md flex flex-col items-center hover:scale-105 transition"
+                    data-aos="zoom-in">
+                    <i data-lucide="code" class="w-10 h-10 mb-3"></i>
+                    <p class="text-lg font-medium">HTML</p>
                 </div>
-                <div class="card bg-base-200 p-6 items-center" data-aos="zoom-in">
-                    <i data-lucide="palette"></i>
-                    <p>CSS</p>
+
+                <div class="bg-base-200 p-6 rounded-xl shadow-md flex flex-col items-center hover:scale-105 transition"
+                    data-aos="zoom-in" data-aos-delay="100">
+                    <i data-lucide="palette" class="w-10 h-10 mb-3"></i>
+                    <p class="text-lg font-medium">CSS</p>
                 </div>
-                <div class="card bg-base-200 p-6 items-center" data-aos="zoom-in">
-                    <i data-lucide="zap"></i>
-                    <p>JavaScript</p>
+
+                <div class="bg-base-200 p-6 rounded-xl shadow-md flex flex-col items-center hover:scale-105 transition"
+                    data-aos="zoom-in" data-aos-delay="200">
+                    <i data-lucide="zap" class="w-10 h-10 mb-3"></i>
+                    <p class="text-lg font-medium">JavaScript</p>
                 </div>
-                <div class="card bg-base-200 p-6 items-center" data-aos="zoom-in">
-                    <i data-lucide="wind"></i>
-                    <p>Tailwind</p>
+
+                <div class="bg-base-200 p-6 rounded-xl shadow-md flex flex-col items-center hover:scale-105 transition"
+                    data-aos="zoom-in" data-aos-delay="300">
+                    <i data-lucide="wind" class="w-10 h-10 mb-3"></i>
+                    <p class="text-lg font-medium">Tailwind CSS</p>
                 </div>
-                <div class="card bg-base-200 p-6 items-center" data-aos="zoom-in">
-                    <i data-lucide="flower"></i>
-                    <p>DaisyUI</p>
+
+                <div class="bg-base-200 p-6 rounded-xl shadow-md flex flex-col items-center hover:scale-105 transition"
+                    data-aos="zoom-in" data-aos-delay="400">
+                    <i data-lucide="flower" class="w-10 h-10 mb-3"></i>
+                    <p class="text-lg font-medium">DaisyUI</p>
                 </div>
-                <div class="card bg-base-200 p-6 items-center" data-aos="zoom-in">
-                    <i data-lucide="cpu"></i>
-                    <p>Python</p>
+
+                <div class="bg-base-200 p-6 rounded-xl shadow-md flex flex-col items-center hover:scale-105 transition"
+                    data-aos="zoom-in" data-aos-delay="500">
+                    <i data-lucide="cpu" class="w-10 h-10 mb-3"></i>
+                    <p class="text-lg font-medium">Python</p>
                 </div>
+
             </div>
+
         </div>
     </section>
-
-    <!-- PROJECTS -->
     <section id="project" class="py-24 bg-base-100">
         <div class="max-w-6xl mx-auto px-6">
-            <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">Projects</h2>
+
+            <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">
+                Projects
+            </h2>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                <img src="2.png" class="rounded-xl shadow" />
-                <img src="1.png" class="rounded-xl shadow" />
-                <img src="3.png" class="rounded-xl shadow" />
-                <img src="4.png" class="rounded-xl shadow" />
+
+                <div class="bg-base-200 p-5 rounded-xl shadow-md hover:scale-[1.03] transition cursor-pointer"
+                    data-aos="zoom-in">
+                    <img src="2.png" class="rounded-lg mb-4 w-full h-40 object-cover" alt="">
+                    <h3 class="text-xl font-semibold">All In One Menu</h3>
+                    <p class="text-sm opacity-70 mt-2">Simple Arithmetics Menu.</p>
+                </div>
+
+                <div class="bg-base-200 p-5 rounded-xl shadow-md hover:scale-[1.03] transition cursor-pointer"
+                    data-aos="zoom-in" data-aos-delay="100">
+                    <img src="1.png" class="rounded-lg mb-4 w-full h-40 object-cover" alt="">
+                    <h3 class="text-xl font-semibold">E-Commerce</h3>
+                    <p class="text-sm opacity-70 mt-2">Simple Restaurant Cashier.</p>
+                </div>
+
+                <div class="bg-base-200 p-5 rounded-xl shadow-md hover:scale-[1.03] transition cursor-pointer"
+                    data-aos="zoom-in" data-aos-delay="200">
+                    <img src="3.png" class="rounded-lg mb-4 w-full h-40 object-cover" alt="">
+                    <h3 class="text-xl font-semibold">Learning Page</h3>
+                    <p class="text-sm opacity-70 mt-2">Learning Chapter Website.</p>
+                </div>
+
+                <div class="bg-base-200 p-5 rounded-xl shadow-md hover:scale-[1.03] transition cursor-pointer"
+                    data-aos="zoom-in" data-aos-delay="300">
+                    <img src="4.png" class="rounded-lg mb-4 w-full h-40 object-cover" alt="">
+                    <h3 class="text-xl font-semibold">Simple Menu</h3>
+                    <p class="text-sm opacity-70 mt-2">Scholarship Eligibility Checker.</p>
+                </div>
+
             </div>
+
         </div>
     </section>
+    <section id="contact" class="max-w-3xl mx-auto px-6 py-20">
+        <h2 class="text-3xl font-semibold tracking-tight mb-6">Contact</h2>
 
-    <!-- CONTACT -->
-    <section id="contact" class="py-20 px-6 max-w-3xl mx-auto">
-        <h2 class="text-3xl font-bold mb-6">Contact</h2>
-        <input class="input input-bordered w-full mb-4" placeholder="Name" />
-        <input class="input input-bordered w-full mb-4" placeholder="Email" />
-        <textarea class="textarea textarea-bordered w-full mb-4" placeholder="Message"></textarea>
-        <button class="btn btn-primary w-full">Send</button>
+
+        <form class="space-y-6 mb-20">
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                <input type="text"
+                    class="w-full border border-gray-300 rounded-xl px-4 py-2 focus:outline-none focus:ring-2 focus:ring-black focus:border-black"
+                    placeholder="Your name" />
+            </div>
+
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                <input type="email"
+                    class="w-full border border-gray-300 rounded-xl px-4 py-2 focus:outline-none focus:ring-2 focus:ring-black focus:border-black"
+                    placeholder="you@example.com" />
+            </div>
+
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                <textarea
+                    class="w-full border border-gray-300 rounded-xl px-4 py-2 h-32 focus:outline-none focus:ring-2 focus:ring-black focus:border-black"
+                    placeholder="Write your message..."></textarea>
+            </div>
+
+            <button type="submit" class="px-6 py-3 bg-black text-white rounded-xl hover:bg-gray-800 transition">
+                Send Message
+            </button>
+        </form>
     </section>
+    <footer class="w-full bg-base-300 text-base-content py-12 mt-20 transition">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col items-center gap-8">
 
-    <!-- FOOTER -->
-    <footer class="bg-base-300 py-8 text-center">
-        <p class="opacity-70">© 2025 Arfa Ghazi Amr Arumi</p>
+            <div class="flex gap-8">
+                <a href="https://instagram.com/ghazi.aru" class="hover:text-pink-500 transition">
+                    <i data-lucide="instagram" class="w-7 h-7"></i>
+                </a>
+
+                <a href="https://wa.me/6285802709350" class="hover:text-green-600 transition">
+                    <i data-lucide="message-circle" class="w-7 h-7"></i>
+                </a>
+
+                <a href="mailto:arfaghazi13@gmail.com" class="hover:text-red-600 transition">
+                    <i data-lucide="mail" class="w-7 h-7"></i>
+                </a>
+            </div>
+
+            <p class="text-sm opacity-70 text-center">
+                © 2025 Arfa Ghazi Amr Arumi — All Rights Reserved
+            </p>
+        </div>
     </footer>
-
     <script>
         lucide.createIcons();
+
         AOS.init();
 
-        const roles = ["Web Developer", "Frontend Engineer", "UI Enthusiast"];
-        let i = 0, j = 0, del = false;
-        const el = document.getElementById("role");
+        const themeToggle = document.getElementById('themeToggle');
+        const html = document.querySelector('html');
+
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            html.setAttribute('data-theme', savedTheme);
+            themeToggle.checked = savedTheme === 'dark';
+        } else {
+            const defaultTheme = html.getAttribute('data-theme') || 'light';
+            themeToggle.checked = defaultTheme === 'dark';
+        }
+
+        themeToggle.addEventListener('change', () => {
+            const theme = themeToggle.checked ? 'dark' : 'light';
+            html.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+        });
+
+        const sections = document.querySelectorAll("section");
+        const navLinks = document.querySelectorAll("#navbar a");
+
+        window.addEventListener("scroll", () => {
+            let current = "";
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 120;
+                const sectionHeight = section.offsetHeight;
+
+                if (
+                    window.scrollY >= sectionTop &&
+                    window.scrollY < sectionTop + sectionHeight
+                ) {
+                    current = section.getAttribute("id");
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove("active");
+
+                if (link.getAttribute("href") === `#${current}`) {
+                    link.classList.add("active");
+                }
+            });
+        });
+
+
+        const roles = [
+            "Web Developer",
+            "Frontend Engineer",
+            "Full-Stack Enthusiast",
+            "UI Craftsman"
+        ];
+
+        let roleIndex = 0;
+        let charIndex = 0;
+        let currentText = "";
+        let isDeleting = false;
+        const speed = 100;
 
         function type() {
-            if (!del) {
-                el.textContent = roles[i].slice(0, ++j);
-                if (j === roles[i].length) del = true;
+            const span = document.getElementById("role");
+
+            currentText = roles[roleIndex];
+
+            if (!isDeleting) {
+                span.textContent = currentText.substring(0, charIndex + 1);
+                charIndex++;
+
+                if (charIndex === currentText.length) {
+                    isDeleting = true;
+                    setTimeout(type, 1000);
+                    return;
+                }
             } else {
-                el.textContent = roles[i].slice(0, --j);
-                if (j === 0) { del = false; i = (i + 1) % roles.length; }
+                span.textContent = currentText.substring(0, charIndex - 1);
+                charIndex--;
+
+                if (charIndex === 0) {
+                    isDeleting = false;
+                    roleIndex = (roleIndex + 1) % roles.length;
+                }
             }
-            setTimeout(type, del ? 60 : 100);
+
+            setTimeout(type, isDeleting ? 50 : speed);
         }
+
         type();
 
-        const themeToggle = document.getElementById("themeToggle");
-        const sun = document.getElementById("sunIcon");
-        const moon = document.getElementById("moonIcon");
+        window.dispatchEvent(new Event("scroll"));
 
-        function setTheme(t) {
-            document.documentElement.setAttribute("data-theme", t);
-            sun.classList.toggle("hidden", t !== "dark");
-            moon.classList.toggle("hidden", t === "dark");
-            localStorage.setItem("theme", t);
-        }
-
-        setTheme(localStorage.getItem("theme") || "light");
-        themeToggle.onclick = () =>
-            setTheme(document.documentElement.dataset.theme === "light" ? "dark" : "light");
     </script>
-
 </body>
+
 </html>
